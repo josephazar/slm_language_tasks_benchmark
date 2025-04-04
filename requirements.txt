@@ -2,3 +2,10 @@ pandas
 numpy
 scikit-learn
 matplotlib
+azure-ai-language-questionanswering
+openai
+pydantic
+requests
+python-dotenv
+azure-ai-translation-text
+streamlit
