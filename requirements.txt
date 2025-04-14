@@ -9,3 +9,9 @@ requests
 python-dotenv
 azure-ai-translation-text
 streamlit
+azure.ai.textanalytics
+rouge-score
+nltk
+langchain
+langchain_community
+langchain_ollama

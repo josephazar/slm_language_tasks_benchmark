@@ -6,8 +6,8 @@ from openai import AzureOpenAI
 from pydantic import BaseModel
 from azure.ai.language.questionanswering import QuestionAnsweringClient
 from azure.core.credentials import AzureKeyCredential
-from pydantic import BaseModel
 from azure.ai.translation.text import TextTranslationClient
+from azure.ai.textanalytics import TextAnalyticsClient
 import re
 
 # Load environment variables from .env file
@@ -17,6 +17,12 @@ load_dotenv()
 translator_client = TextTranslationClient(
     endpoint=os.getenv("TRANSLATOR_DOCUMENT_ENDPOINT"),
     credential=AzureKeyCredential(os.getenv("TRANSLATOR_KEY"))
+)
+
+# Initialize Text Analytics client for summarization
+text_analytics_client = TextAnalyticsClient(
+    endpoint=os.getenv("LANGUAGE_SERVICE_ENDPOINT"),
+    credential=AzureKeyCredential(os.getenv("LANGUAGE_SERVICE_KEY"))
 )
 
 # Step 1: Define translation function using Azure Translator SDK
@@ -86,8 +92,127 @@ def translate_text(texts, from_lang="sq", to_lang="en"):
     
     return all_translations
 
+# Step 2: Define functions for extractive and abstractive summarization
+def generate_extractive_summaries(texts):
+    """
+    Generate extractive summaries for a list of texts using Azure Text Analytics.
     
-# Step 2: Define Pydantic model for structured question output
+    Args:
+        texts (list): List of strings to summarize.
+    
+    Returns:
+        list: Extractive summaries.
+    """
+    if not texts:
+        return []
+    
+    summaries = []
+    
+    # Process texts in batches of at most 10 documents
+    for i in range(0, len(texts), 10):
+        batch = texts[i:i+10]
+        batch = [text for text in batch if text and len(text.strip()) > 0]
+        
+        if not batch:
+            continue
+            
+        try:
+            # Start extractive summarization
+            poller = text_analytics_client.begin_extract_summary(batch)
+            extract_summary_results = poller.result()
+            
+            # Process results
+            batch_summaries = []
+            for result in extract_summary_results:
+                if result.kind == "ExtractiveSummarization":
+                    # Join the sentences to form a coherent summary
+                    summary = " ".join([sentence.text for sentence in result.sentences])
+                    batch_summaries.append(summary)
+                elif result.is_error:
+                    print(f"Error in extractive summarization: {result.error.code} - {result.error.message}")
+                    batch_summaries.append("")
+                else:
+                    batch_summaries.append("")
+                    
+            # Add batch results to summaries
+            summaries.extend(batch_summaries)
+            
+            # Add empty strings for any skipped texts
+            if len(batch_summaries) < len(batch):
+                summaries.extend([""] * (len(batch) - len(batch_summaries)))
+                
+        except Exception as e:
+            print(f"Error in extractive summarization batch: {e}")
+            summaries.extend([""] * len(batch))
+    
+    # Make sure we return the same number of summaries as input texts
+    while len(summaries) < len(texts):
+        summaries.append("")
+        
+    return summaries
+
+def generate_abstractive_summaries(texts):
+    """
+    Generate abstractive summaries for a list of texts using Azure Text Analytics.
+    
+    Args:
+        texts (list): List of strings to summarize.
+    
+    Returns:
+        list: Abstractive summaries.
+    """
+    if not texts:
+        return []
+    
+    summaries = []
+    
+    # Process texts in batches of at most 10 documents
+    for i in range(0, len(texts), 10):
+        batch = texts[i:i+10]
+        batch = [text for text in batch if text and len(text.strip()) > 0]
+        
+        if not batch:
+            continue
+            
+        try:
+            # Start abstractive summarization
+            poller = text_analytics_client.begin_abstract_summary(batch)
+            abstract_summary_results = poller.result()
+            
+            # Process results
+            batch_summaries = []
+            for result in abstract_summary_results:
+                if result.kind == "AbstractiveSummarization":
+                    # Get the first summary from the result
+                    if result.summaries:
+                        summary = result.summaries[0].text
+                        batch_summaries.append(summary)
+                    else:
+                        batch_summaries.append("")
+                elif result.is_error:
+                    print(f"Error in abstractive summarization: {result.error.code} - {result.error.message}")
+                    batch_summaries.append("")
+                else:
+                    batch_summaries.append("")
+                    
+            # Add batch results to summaries
+            summaries.extend(batch_summaries)
+            
+            # Add empty strings for any skipped texts
+            if len(batch_summaries) < len(batch):
+                summaries.extend([""] * (len(batch) - len(batch_summaries)))
+                
+        except Exception as e:
+            print(f"Error in abstractive summarization batch: {e}")
+            summaries.extend([""] * len(batch))
+    
+    # Make sure we return the same number of summaries as input texts
+    while len(summaries) < len(texts):
+        summaries.append("")
+        
+    return summaries
+    
+# Step 3: Define Pydantic model for structured question output
 class QuestionResponse(BaseModel):
     question: str
 
@@ -199,6 +324,14 @@ def main():
     # Translate 'summary' column
     print("Translating 'summary' to English...")
     df['summary_en'] = translate_text(df['summary'].tolist(), from_lang="sq", to_lang="en")
+    
+    # Generate extractive summaries using Azure Text Analytics
+    print("Generating extractive summaries...")
+    df['extractive_summary_en'] = generate_extractive_summaries(df['text_en'].tolist())
+    
+    # Generate abstractive summaries using Azure Text Analytics
+    print("Generating abstractive summaries...")
+    df['abstractive_summary_en'] = generate_abstractive_summaries(df['text_en'].tolist())
 
     # Generate questions based on "text_en"
     print("Generating questions...")
@@ -220,7 +353,7 @@ def main():
 
     # Save the updated DataFrame to data.csv
     df.to_csv("data.csv", index=False)
-    print("Updated 'data.csv' with new columns: 'text_en', 'summary_en', 'question', 'answer', 'answer_confidence'.")
+    print("Updated 'data.csv' with new columns: 'text_en', 'summary_en', 'extractive_summary_en', 'abstractive_summary_en', 'question', 'answer', 'answer_confidence'.")
 
 if __name__ == "__main__":
     main()
