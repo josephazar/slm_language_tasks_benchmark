@@ -81,9 +81,21 @@ class ModelEvaluator:
             print(f"No translation column found for {model_name}")
             return 0
         
-        # Get references and candidates
-        references = [nltk.word_tokenize(self._clean_text(text)) for text in self.baseline_df["text_en"]]
-        candidates = [nltk.word_tokenize(self._clean_text(text)) for text in model_df[translate_col]]
+        # Get references and candidates, skipping rows marked as "SKIPPED - TEXT TOO LONG"
+        valid_pairs = []
+        for i, (ref, cand) in enumerate(zip(self.baseline_df["text_en"], model_df[translate_col])):
+            if isinstance(cand, str) and "SKIPPED - TEXT TOO LONG" in cand:
+                print(f"Skipping row {i} for translation evaluation (text too long)")
+                continue
+            valid_pairs.append((ref, cand))
+        
+        if not valid_pairs:
+            print("No valid translation pairs found")
+            return 0
+            
+        # Split into separate lists
+        references = [nltk.word_tokenize(self._clean_text(ref)) for ref, _ in valid_pairs]
+        candidates = [nltk.word_tokenize(self._clean_text(cand)) for _, cand in valid_pairs]
         
         # Calculate BLEU scores
         bleu_scores = []
@@ -102,7 +114,7 @@ class ModelEvaluator:
         # Calculate average BLEU score
         avg_bleu = np.mean(bleu_scores) if bleu_scores else 0
         
-        print(f"Translation BLEU score: {avg_bleu:.4f}")
+        print(f"Translation BLEU score: {avg_bleu:.4f} (calculated on {len(bleu_scores)} valid samples)")
         return avg_bleu
     
     def evaluate_summarization(self, model_name, model_df):
@@ -118,9 +130,21 @@ class ModelEvaluator:
             print(f"No summary column found for {model_name}")
             return {"rouge1": 0, "rouge2": 0, "rougeL": 0}
         
-        # Get references and candidates
-        references = [self._clean_text(text) for text in self.baseline_df["summary_en"]]
-        candidates = [self._clean_text(text) for text in model_df[summary_col]]
+        # Get references and candidates, skipping rows marked as "SKIPPED - TEXT TOO LONG"
+        valid_pairs = []
+        for i, (ref, cand) in enumerate(zip(self.baseline_df["summary_en"], model_df[summary_col])):
+            if isinstance(cand, str) and "SKIPPED - TEXT TOO LONG" in cand:
+                print(f"Skipping row {i} for summarization evaluation (text too long)")
+                continue
+            valid_pairs.append((ref, cand))
+        
+        if not valid_pairs:
+            print("No valid summarization pairs found")
+            return {"rouge1": 0, "rouge2": 0, "rougeL": 0}
+        
+        # Split into separate lists
+        references = [self._clean_text(ref) for ref, _ in valid_pairs]
+        candidates = [self._clean_text(cand) for _, cand in valid_pairs]
         
         # Calculate ROUGE scores
         rouge1_scores = []
@@ -150,7 +174,7 @@ class ModelEvaluator:
         avg_rouge2 = np.mean(rouge2_scores) if rouge2_scores else 0
         avg_rougeL = np.mean(rougeL_scores) if rougeL_scores else 0
         
-        print(f"Summarization ROUGE scores:")
+        print(f"Summarization ROUGE scores (calculated on {len(rouge1_scores)} valid samples):")
         print(f"  ROUGE-1: {avg_rouge1:.4f}")
         print(f"  ROUGE-2: {avg_rouge2:.4f}")
         print(f"  ROUGE-L: {avg_rougeL:.4f}")
@@ -174,9 +198,21 @@ class ModelEvaluator:
             print(f"No answer column found for {model_name}")
             return {"exact_match": 0, "f1": 0}
         
-        # Get references and candidates
-        references = [self._clean_text(text) for text in self.baseline_df["answer"]]
-        candidates = [self._clean_text(text) for text in model_df[answer_col]]
+        # Get references and candidates, skipping rows marked as "SKIPPED - TEXT TOO LONG"
+        valid_pairs = []
+        for i, (ref, cand) in enumerate(zip(self.baseline_df["answer"], model_df[answer_col])):
+            if isinstance(cand, str) and "SKIPPED - TEXT TOO LONG" in cand:
+                print(f"Skipping row {i} for QA evaluation (text too long)")
+                continue
+            valid_pairs.append((ref, cand))
+        
+        if not valid_pairs:
+            print("No valid QA pairs found")
+            return {"exact_match": 0, "f1": 0}
+        
+        # Split into separate lists
+        references = [self._clean_text(ref) for ref, _ in valid_pairs]
+        candidates = [self._clean_text(cand) for _, cand in valid_pairs]
         
         # Calculate exact match
         exact_matches = [1 if ref == cand else 0 for ref, cand in zip(references, candidates)]
@@ -214,7 +250,7 @@ class ModelEvaluator:
         # Calculate average F1
         avg_f1 = np.mean(f1_scores) if f1_scores else 0
         
-        print(f"QA scores:")
+        print(f"QA scores (calculated on {len(f1_scores)} valid samples):")
         print(f"  Exact Match: {exact_match_score:.4f}")
         print(f"  F1 Score: {avg_f1:.4f}")
         
