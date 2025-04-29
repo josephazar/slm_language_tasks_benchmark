@@ -1,0 +1,38 @@
+Sample 1:
+Reference:
+Large mass of Albanians in Manhattan to honor the world-famous charity
+
+gpt4:
+Empire State Building Sparks Controversy Over Tribute to Mother Teresa's 100th Birthday Amidst Protests and Celebrations in New York City.
+
+gemma:
+New York City’s Empire State Building sparked controversy by prioritizing a women’s suffrage anniversary over honoring Mother Teresa’s centennial birthdate, prompting protests from both religious groups and the Albanian diaspora.
+
+deepseek:
+
+"Empire State Building’s Centennial Lighting Decision Sparks Controversy"
+
+mistral:
+Protests Erupt as Empire State Building Snubs Mother Teresa's Centennial with Light Display
+
+================================================================================
+
+Sample 2:
+Reference:
+ Within the end of the year, two "UH-60 Blackhaëk" are expected to arrive. U.S. Ambassador: The U.S. and Albania stand "side by side" today and we will stand "side by side" tomorrow 
+
+gpt4:
+Albania Signs Contract for Black Hawk Helicopters in Joint Defense Program with the USA
+
+gemma:
+Albania and the US Sign Contract for Black Hawk Helicopters.
+
+deepseek:
+
+"Albanian Air Force Signs Contract for Black Hawk Helicopters Jointly Financed by Albania and the United States."
+
+mistral:
+Albania Signs Agreement for Black Hawk Helicopters with U.S. Support
+
+================================================================================
+

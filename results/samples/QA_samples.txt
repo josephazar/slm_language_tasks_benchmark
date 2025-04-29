@@ -1,0 +1,42 @@
+Sample 1:
+Reference:
+One of New York's tallest buildings, the Empire State Building stuck to the decision not to turn on the blue and white lights on the occasion of the 100th anniversary of Mother Teresa's birth. Last night, its colors were white, blue and red, symbolizing another anniversary, the 90th anniversary of the 19th amendment to the U.S. Constitution which gave women the right to vote. Hundreds of people gathered in protest last night to declare to the owners of the building that the Empire State should have honored Mother Teresa first and foremost.
+
+gpt4:
+The Empire State Building decided not to light its colors in honor of Mother Teresa's 100th birthday, instead opting for colors symbolizing the 90th anniversary of the 19th Amendment, which granted women the right to vote. Hundreds protested the decision, believing the building's owners made a mistake by not honoring Mother Teresa. The debate over the choice of colors has been prominent in New York, with some suggesting that Mother Teresa would not have wanted such a fuss made for her birthday.
+
+gemma:
+The Empire State Building decided against lighting up in white and blue to commemorate Mother Teresa’s 100th birth anniversary, instead opting for colors celebrating the 90th anniversary of the 19th Amendment. This decision sparked protests with hundreds gathering to urge the building’s owners to honor Mother Teresa instead. Many protestors, including members of the Albanian community and the Catholic League, believed the building made a mistake by not recognizing her on this significant occasion.
+
+deepseek:
+
+The Empire State Building refused to honor Mother Teresa's 100th birth anniversary with its lights, instead illuminating them for another event, sparking widespread public backlash. Many viewed this decision as a missed opportunity to celebrate her global humanitarian legacy and religious significance. Thousands protested, including Albanians who strongly supported honoring her, organizing demonstrations against the building's management.
+
+mistral:
+The Empire State Building decided not to honor Mother Teresa on her 100th birth anniversary with its lights, instead displaying white, blue, and red lights to celebrate the 90th anniversary of the 19th Amendment. Hundreds of people protested this decision, arguing that the building should have honored Mother Teresa. The protest was organized by the Catholic League, and many Albanian Americans participated to express their support for Mother Teresa.
+
+================================================================================
+
+Sample 2:
+Reference:
+In Tirana, the acceptance contract for equipping the Albanian Air Force with "Black Hawk" helicopters was signed today, part of a program co-financed by the Albanian and American governments. The contract was signed at the Albanian air base in Farka, by the Minister of Defense Olta Xhaçka and the American Ambassador Yuri Kim. For Mrs. Xhaçka "".
+
+gpt4:
+A contract was signed in Tirana for equipping the Albanian Air Force with Black Hawk helicopters, as part of a program co-financed by the Albanian and American governments. The contract was signed by Albanian Defense Minister Olta Xhaçka and American Ambassador Yuri Kim, with discussions on the helicopter acquisition having taken place during Minister Xhaçka's visit to the United States a year ago. Initially, two UH-60 Black Hawk helicopters are expected to arrive in Albania within the year.
+
+gemma:
+The agreement signed in Tirana facilitates the equipping of the Albanian Air Force with Black Hawk helicopters, a program jointly funded by the Albanian and American governments. This procurement, discussed during a visit to the United States a year prior, includes training for Albanian pilots with the New Jersey National Guard. The arrival of the first two UH-60 Blackhawk helicopters is expected within the year, providing Albania with versatile aircraft for a wide range of applications.
+
+
+
+
+
+deepseek:
+
+The agreement signed in Tirana aims to equip the Albanian Air Force with Black Hawk helicopters through a co-funded program by the Albanian and U.S. governments. The contract was finalized at Farka airbase, involving Albania's Defense Minister Olta Xhaçka and U.S. Ambassador Yuri Kim. These helicopters will enhance Albania's defense capabilities and contribute to regional security.
+
+mistral:
+The agreement signed in Tirana is significant because it equips the Albanian Air Force with Black Hawk helicopters, enhancing its capabilities. This contract is part of a jointly financed program between the Albanian and American governments. The helicopters, known for their versatile use, are expected to arrive in Albania within a year.
+
+================================================================================
+

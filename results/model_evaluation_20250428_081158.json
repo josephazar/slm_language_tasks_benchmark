@@ -1,0 +1,105 @@
+{
+  "timestamp": "2025-04-28 08:09:16",
+  "models": {
+    "gpt4": {
+      "translation": {
+        "bleu": 0.6492621849669479,
+        "semantic_sim": 0.9575717306949876
+      },
+      "summarization": {
+        "rouge1": 0.21099346362268123,
+        "rouge2": 0.04422669939599788,
+        "rougeL": 0.1620224733762686,
+        "semantic_sim": 0.4686719701540741,
+        "info_coverage": 0.060162501639774366,
+        "bertscore_f1": 0.18836277723312378
+      },
+      "summarization_source": {
+        "source_coverage": 0.023873017510274805,
+        "semantic_relevance": 0.6567151292481206,
+        "conciseness": 0.2946116339178583,
+        "bertscore_f1": 0.15620464086532593
+      },
+      "qa": {
+        "semantic_sim": 0.7365678426894274,
+        "containment": 0.40983613694205334,
+        "info_coverage": 0.2516282952557452
+      }
+    },
+    "gemma": {
+      "translation": {
+        "bleu": 0.6158133748931236,
+        "semantic_sim": 0.9265974098443985
+      },
+      "summarization": {
+        "rouge1": 0.21812862599360228,
+        "rouge2": 0.043843115746135995,
+        "rougeL": 0.16304909559408848,
+        "semantic_sim": 0.49878396339714526,
+        "info_coverage": 0.07800985125985126,
+        "bertscore_f1": 0.22895079851150513
+      },
+      "summarization_source": {
+        "source_coverage": 0.016225244490688167,
+        "semantic_relevance": 0.6174936830997467,
+        "conciseness": 0.24146104285636955,
+        "bertscore_f1": 0.11782355606555939
+      },
+      "qa": {
+        "semantic_sim": 0.7061481294035912,
+        "containment": 0.3806308217514872,
+        "info_coverage": 0.22364999991395673
+      }
+    },
+    "deepseek": {
+      "translation": {
+        "bleu": 0.2746267616585911,
+        "semantic_sim": 0.8551398897171021
+      },
+      "summarization": {
+        "rouge1": 0.1906300302677578,
+        "rouge2": 0.042131493880130454,
+        "rougeL": 0.14544954536889093,
+        "semantic_sim": 0.4501254936680198,
+        "info_coverage": 0.07417352092352092,
+        "bertscore_f1": 0.1642787605524063
+      },
+      "summarization_source": {
+        "source_coverage": 0.019431514845002038,
+        "semantic_relevance": 0.5948708263039589,
+        "conciseness": 0.24590919370885608,
+        "bertscore_f1": 0.08837232738733292
+      },
+      "qa": {
+        "semantic_sim": 0.6780597823858261,
+        "containment": 0.32496345504074753,
+        "info_coverage": 0.1665818091527026
+      }
+    },
+    "mistral": {
+      "translation": {
+        "bleu": 0.6109733059472111,
+        "semantic_sim": 0.9490046018362045
+      },
+      "summarization": {
+        "rouge1": 0.21331535108188424,
+        "rouge2": 0.05154120302184077,
+        "rougeL": 0.17033521908035934,
+        "semantic_sim": 0.471424992531538,
+        "info_coverage": 0.08108297258297258,
+        "bertscore_f1": 0.1869836002588272
+      },
+      "summarization_source": {
+        "source_coverage": 0.017704234605144434,
+        "semantic_relevance": 0.6359715989232063,
+        "conciseness": 0.2159566263885051,
+        "bertscore_f1": 0.12956340610980988
+      },
+      "qa": {
+        "semantic_sim": 0.7226719418168068,
+        "containment": 0.3854748453147587,
+        "info_coverage": 0.23150767991559665
+      }
+    }
+  }
+}

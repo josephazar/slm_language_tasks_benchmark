@@ -1,0 +1,57 @@
+Sample 1:
+Source text:
+One of New York's tallest buildings, the Empire State Building stuck to the decision not to turn on the blue and white lights on the occasion of the 100th anniversary of Mother Teresa's birth. Last night, its colors were white, blue and red, symbolizing another anniversary, the 90th anniversary of the 19th amendment to the U.S. Constitution which gave women the right to vote. Hundreds of people gathered in protest last night to declare to the owners of the building that the Empire State should have honored Mother Teresa first and foremost. From 1931 to 1972, for 40 years in a row, the Empire State has been the world's tallest building. Today she is a symbol of the power and history of New York. But the hundreds of people who gathered there yesterday afternoon believe the building's owners took the wrong step by refusing to honor Mother Teresa on her 100th birth anniversary. The protest was organized by the Catholic League, but for most protesters, religion does not seem to have been an...
+
+gpt4 summary:
+Empire State Building Sparks Controversy Over Tribute to Mother Teresa's 100th Birthday Amidst Protests and Celebrations in New York City.
+
+gemma summary:
+New York City’s Empire State Building sparked controversy by prioritizing a women’s suffrage anniversary over honoring Mother Teresa’s centennial birthdate, prompting protests from both religious groups and the Albanian diaspora.
+
+deepseek summary:
+
+"Empire State Building’s Centennial Lighting Decision Sparks Controversy"
+
+mistral summary:
+Protests Erupt as Empire State Building Snubs Mother Teresa's Centennial with Light Display
+
+================================================================================
+
+Sample 2:
+Source text:
+In Tirana, the acceptance contract for equipping the Albanian Air Force with "Black Hawk" helicopters was signed today, part of a program co-financed by the Albanian and American governments. The contract was signed at the Albanian air base in Farka, by the Minister of Defense Olta Xhaçka and the American Ambassador Yuri Kim. For Mrs. Xhaçka "". While Ambassador Kim "". The equipping of Blackhawk helicopters was discussed during Minister Xhaçka's visit to the United States a year ago. During this time, Albanian pilots have been trained by the New Jersey National Guard. Within the year, it is expected that two helicopters will initially arrive in Albania. UH-60 Blackhawk helicopters have a wide range of use. Ambassador Kim explained that they "". She further added that together with the helicopters ""....
+
+gpt4 summary:
+Albania Signs Contract for Black Hawk Helicopters in Joint Defense Program with the USA
+
+gemma summary:
+Albania and the US Sign Contract for Black Hawk Helicopters.
+
+deepseek summary:
+
+"Albanian Air Force Signs Contract for Black Hawk Helicopters Jointly Financed by Albania and the United States."
+
+mistral summary:
+Albania Signs Agreement for Black Hawk Helicopters with U.S. Support
+
+================================================================================
+
+Sample 3:
+Source text:
+Judges in the US on Monday dismissed lawsuits filed by an ally of President Donald Trump to overturn the certification of President-elect Joe Biden's victory in the states of Michigan and Georgia and declare Mr. Trump the winner in both states. Both lawsuits were filed on November 25 by Sidney Powell, a former lawyer for President Trump's campaign, on behalf of Republican voter groups. President Trump and his allies have lost numerous lawsuits aimed at overturning the results of the November 3 election in states where he lost, raising unfounded allegations of fraud. District Judge Linda Parker in Detroit and District Judge Timothy Batten in Atlanta said the plaintiffs had no legal basis to file a lawsuit and that the cases had been filed too late. "The people spoke," Judge Parker wrote, referring to the election results. While Judge Batten told a hearing on Monday that the plaintiffs were seeking "perhaps the most extraordinary decision ever sought" regarding an election. "They want th...
+
+gpt4 summary:
+US Courts Reject Trump Allies' Lawsuits to Overturn Biden's Election Wins in Michigan and Georgia
+
+gemma summary:
+US Courts Dismiss Lawsuits Seeking to Overturn Biden's Wins in Michigan and Georgia.
+
+deepseek summary:
+
+"U.S. Judges Reject Efforts to Overturn Biden's Michigan and Georgia Wins"
+
+mistral summary:
+American Judges Reject Trump Allies' Attempts to Overturn Biden's Election Wins in Michigan and Georgia
+
+================================================================================
+
