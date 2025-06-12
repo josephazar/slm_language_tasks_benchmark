@@ -1,0 +1,37 @@
+cff-version: 1.2.0
+title: 'Evaluation of Free and Local LLMs for the Albanian Language'
+message: 'If you use this software, please cite it as below.'
+type: software
+authors:
+  - given-names: Raphaël
+    family-names: Couturier
+    affiliation: 'Université Marie et Louis Pasteur, CNRS, Institut FEMTO-ST'
+    orcid: 'https://orcid.org/0000-0000-0000-0000'
+  - given-names: Joseph
+    family-names: Azar
+    affiliation: 'Université Marie et Louis Pasteur, CNRS, Institut FEMTO-ST'
+    orcid: 'https://orcid.org/0000-0000-0000-0000'
+  - given-names: Amarildo
+    family-names: Rista
+    affiliation: 'Aleksandër Moisiu University of Durrës, Albania'
+    orcid: 'https://orcid.org/0000-0000-0000-0000'
+  - given-names: Shkelqim
+    family-names: Fortuzi
+    affiliation: 'Aleksandër Moisiu University of Durrës, Albania'
+    orcid: 'https://orcid.org/0000-0000-0000-0000'
+repository-code: 'https://github.com/[username]/albanian-llm-evaluation'
+abstract: >-
+  This project evaluates the performance of both commercial (GPT-4) and 
+  open-source (Gemma, DeepSeek, Mistral) Large Language Models on Albanian 
+  language tasks including translation, text summarization, and question 
+  answering. We demonstrate that open-source models perform competitively 
+  with commercial alternatives for low-resource language processing.
+keywords:
+  - large language models
+  - Albanian language
+  - LLM evaluation
+  - low-resource languages
+  - natural language processing
+license: MIT
+version: 1.0.0
+date-released: '2025-01-01'

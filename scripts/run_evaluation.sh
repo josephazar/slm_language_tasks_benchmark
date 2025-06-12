@@ -13,10 +13,10 @@ ollama list
 
 # Run the models
 echo "Running models..."
-python model_runner.py --models "llama3.2:1b" "deepseek-r1" 
+python ../src/model_runner.py --models "llama3.2:1b" "deepseek-r1" 
 
 # Run evaluation
 echo "Evaluating results..."
-python evaluate_results.py
+python ../src/evaluate_results.py
 
 echo "Evaluation complete! Check the 'results' directory for comparison reports and visualizations."

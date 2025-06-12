@@ -1,11 +1,97 @@
-comments.txt
-
-.env
-venv/
+# Python
 __pycache__/
+*.py[cod]
+*$py.class
 *.pyc
 *.pyo
 *.pyd
-
-.DS_Store
+*.so
+.Python
+venv/
+env/
+ENV/
 .venv
+
+# Distribution / packaging
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
+.pytest_cache/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# pyenv
+.python-version
+
+# Environments
+.env
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Project specific
+comments.txt
+*.log
+*.tmp
+.temp/
+
+# Paper and review files (kept locally)
+23_Review.docx
+Paper_Review_23.docx
+isccs2025_LLM_Albanian_language.docx
+23_Review.txt
+Paper_Review_23.txt
+isccs2025_LLM_Albanian_language.txt
+PAPER_REVISIONS.md
+# Model weights (if any)
+models/
+*.pth
+*.pt
+*.ckpt
+*.h5
+*.pb
+
+# API keys and secrets
+config/secrets.yaml
+*.key
+
+# Large files
+*.bin
+*.dat
